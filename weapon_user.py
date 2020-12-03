@@ -45,11 +45,7 @@ class WeaponUser(Character):
 	"""
 	Un personnage qui utilise des armes physiques.
 
-	:param name: Le nom du personnage
-	:param max_hp: HP maximum
-	:param physical_attack: Le niveau d'attaque du personnage
-	:param physical_defense: Le niveau de défense du personnage
-	:param level: Le niveau d'expérience du personnage
+	:param kwargs: Ce qui est passé à Character.
 	"""
 
 	def __init__(self, **kwargs):

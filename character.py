@@ -7,6 +7,7 @@ Classes pour représenter un personnage.
 
 import random
 from abc import *
+from collections import namedtuple
 
 import utils
 
@@ -42,6 +43,7 @@ class Character(ABC):
 		self.attack = attack
 		self.defense = defense
 		self.hp = max_hp
+		self.__known_commands = {}
 	
 	@property
 	def name(self):
@@ -62,6 +64,10 @@ class Character(ABC):
 	@last_move_used.setter
 	def last_move_used(self, val: OffensiveMove):
 		self.__last_move_used = val
+
+	@property
+	def known_commands(self):
+		return self.__known_commands
 
 	@abstractmethod
 	def compute_damage(self, other):
